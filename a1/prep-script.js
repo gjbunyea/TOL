@@ -13,7 +13,7 @@ function onYouTubeIframeAPIReady() {
         // height: '390',
         // width: '640',
         videoId: 'M7lc1UVf-VE',
-        playerVars: {'autoplay': 0, 'wmode': 'transparent', 'fs': 0, 'controls':1, 'rel':0, 'modestbranding':1, 'showinfo':0},
+        playerVars: { 'autoplay': 0, 'wmode': 'transparent', 'fs': 0, 'controls': 1, 'rel': 0, 'modestbranding': 1, 'showinfo': 0 },
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange,
@@ -40,41 +40,4 @@ function onPlayerStateChange(event) {
 }
 function stopVideo() {
     player.stopVideo();
-}
-
-var state = "start";
-function nextVideo(input) {
-    switch (state) {
-        case "start":
-            switch (input) {
-                case "correct":
-                    // state = 
-
-                    break;
-                case "incorrect":
-                    // state = 
-                    break;
-            }
-            break;
-        case "path1":
-            break;
-        case "final":
-            break;
-    }
-
-
-}
-/*
-function onYouTubePlayerAPIReady() { //https://stackoverflow.com/questions/11283871/pause-youtube-video-youtube-api
-    player = new YT.Player('player', {
-        height: '315',
-        width: '560',
-        videoId: 'bpOR_HuHRNs',
-    });
-    document.getElementById('resume').onclick = function() {
-        player.playVideo();
-    };
-    document.getElementById('pause').onclick = function() {
-        player.pauseVideo();
-    };
 }
