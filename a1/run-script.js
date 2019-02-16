@@ -12,6 +12,8 @@ function sceneOver(scene) {
 
     pauseVideo()
 
+    $("#currQuestion").text("What do you think?")
+
     $("button").each(function (index) {
 
         $( this ).html(scene.buttonopts[index])
@@ -20,4 +22,8 @@ function sceneOver(scene) {
     });
 
     $("#button-container").show("slow")
+    setTimeout(function(){
+        $("#player").hide(1000)
+      }, 1000)
+
 }

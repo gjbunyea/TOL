@@ -36,9 +36,9 @@ function getScene(getName){
 function nextScene(name){
     var next = getScene(name)
 
-    console.log(next)
-
     player.seekTo(next.begin, true)
+    $("#button-container").hide(1000)
+    $("#player").show(1000)
     player.playVideo()
     run(next)
     // call run with scene
