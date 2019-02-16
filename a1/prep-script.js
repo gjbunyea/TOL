@@ -10,10 +10,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        // height: '390',
-        // width: '640',
         videoId: 'M7lc1UVf-VE',
-        playerVars: { 'autoplay': 0, 'wmode': 'transparent', 'fs': 0, 'controls': 1, 'rel': 0, 'modestbranding': 1, 'showinfo': 0 },
+        playerVars: { 'autoplay': 0, 'wmode': 'transparent', 'controls': 1, 'rel': 0, 'modestbranding': 1, 'showinfo': 0 },
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange,
@@ -25,19 +23,20 @@ function onYouTubeIframeAPIReady() {
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-    event.target.playVideo();
+    player.seekTo(0);
+    player.playVideo();
 }
 
 // 5. The API calls this function when the player's state changes.
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
-var done = false;
+
+var letPlayerChange = true;
+
 function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 6000);
-        done = true;
+    if(letPlayerChange){
+        letPlayerChange = false
+        var state = "start";
+        run(event.data, state)
     }
-}
-function stopVideo() {
-    player.stopVideo();
 }
