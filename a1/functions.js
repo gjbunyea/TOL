@@ -32,3 +32,14 @@ function playVideo(){
 function getScene(getName){
     return scenes.find(item => item.name === getName)
 }
+
+function nextScene(name){
+    var next = getScene(name)
+
+    console.log(next)
+
+    player.seekTo(next.begin, true)
+    player.playVideo()
+    run(next)
+    // call run with scene
+}

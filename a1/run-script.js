@@ -2,20 +2,21 @@ $(document).ready(function () {
     $("#button-container").hide();
 });
 
-function run(playerStatus, state) {
-    currentScene = getScene(state)
-    // console.log(currentScene.name)
+function run(currentScene) {
+    console.log(currentScene.name + "SCENE BEGUN")
     setTimeout(sceneOver, currentScene.timespan, currentScene)
 }
 
 function sceneOver(scene) {
-    console.log(scene.name)
+    console.log(scene.name + "SCENE OVER")
 
     pauseVideo()
 
     $("button").each(function (index) {
-        // console.log()
+
         $( this ).html(scene.buttonopts[index])
+        $( this ).attr("onclick","nextScene(\"" + scene.nextsceneopts[index] + "\")")
+    
     });
 
     $("#button-container").show("slow")
