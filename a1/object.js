@@ -11,21 +11,21 @@ let scenes = [
         "name": "scene2",
         "begin": 47, //must be seconds
         // "timespan": 3000,
-        "timespan": 74000, //must be milliseconds
+        "timespan": 76000, //must be milliseconds
         "nextQ": "ques2"
     },
     {
         "name": "scene3",
         "begin": 123, //must be seconds
         // "timespan": 3000,
-        "timespan": 31000, //must be milliseconds
+        "timespan": 54000, //must be milliseconds
         "nextQ": "ques3"
     },
     {
         "name": "scene4",
-        "begin": 154, //must be seconds
+        "begin": 177, //must be seconds
         // "timespan": 3000,
-        "timespan": 39000, //must be milliseconds
+        "timespan": 26000, //must be milliseconds
         "nextQ": ""
     }
 ]
@@ -47,7 +47,7 @@ let questions = [
                 "image": "assets/curve-to-point.png",
                 "description": "bent tip straightened",
                 "answer": true,
-                "feedback": "Correct!",
+                "feedback": "Very good, let's see how much you know about sharpening steels.",
                 "whereTo": "ques4"
             }, {
                 "id": "b3",
@@ -74,14 +74,14 @@ let questions = [
                 "image": "",
                 "description": "Yes",
                 "answer": true,
-                "feedback": "Great job, lets now see what that difference is",
+                "feedback": "Great job, lets now see what that difference is.",
                 "whereTo": "scene3"
             }, {
                 "id": "b2",
                 "image": "",
                 "description": "No",
                 "answer": false,
-                "feedback": "That’s not quite right, but keep watching to learn why. We’ll return to this question again soon",
+                "feedback": "That’s not quite right, but keep watching to learn why. We’ll return to this question again soon.",
                 "whereTo": "scene3"
             }
         ]
@@ -148,3 +148,5 @@ let questions = [
         ]
     }
 ]
+
+let q2flag = false

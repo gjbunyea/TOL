@@ -34,12 +34,23 @@
       padding-top: 50px;
     }
 
+    #buttonContainer {
+      display: inline-block;
+    }
+
     button {
-      width: 210px;
-      height: 210px;
-      float:left;
+      /* display: inline-block; */
+      font-size: 18px;
+      width: 210;
+      height: 210;
+      /* float:left; */
       /* padding: 15px; */
       margin: 5px;
+      background: lightskyblue;
+      text-align: center;
+    }
+    button:hover {
+      background: lightblue;
     }
     button img{
       width: 200px;
@@ -57,9 +68,9 @@
     
     <div id="questionContainer">
       <h1 id="currQuestion"></h1>
-      <div id="buttonContainer"></div>
-      
+      <div id="buttonContainer"></div>      
     </div>
+    
   </div>
 
   <script></script>
