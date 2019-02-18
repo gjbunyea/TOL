@@ -2,30 +2,30 @@ let scenes = [
     {
         "name": "scene1",
         "begin": 0, //must be seconds
-        "timespan": 3000,
-        // "timespan": 45000, //must be milliseconds
+        // "timespan": 3000,
+        "timespan": 45000, //must be milliseconds
         "nextQ": "ques1"
 
     },
     {
         "name": "scene2",
         "begin": 47, //must be seconds
-        "timespan": 3000,
-        // "timespan": 74000, //must be milliseconds
+        // "timespan": 3000,
+        "timespan": 74000, //must be milliseconds
         "nextQ": "ques2"
     },
     {
         "name": "scene3",
         "begin": 123, //must be seconds
-        "timespan": 3000,
-        // "timespan": 31000, //must be milliseconds
+        // "timespan": 3000,
+        "timespan": 31000, //must be milliseconds
         "nextQ": "ques3"
     },
     {
         "name": "scene4",
         "begin": 154, //must be seconds
-        "timespan": 3000,
-        // "timespan": 39000, //must be milliseconds
+        // "timespan": 3000,
+        "timespan": 39000, //must be milliseconds
         "nextQ": ""
     }
 ]
