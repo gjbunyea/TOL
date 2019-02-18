@@ -12,24 +12,31 @@ function sceneOver(scene) {
 
     pauseVideo()
 
-    var nextQ = getQuestion( scene.nextQ )
+    var nextQ = getQuestion(scene.nextQ)
 
-    makeQuestion( nextQ )    
+    makeQuestion(nextQ)
 
     // $("#questionContainer").show("slow")
-    setTimeout(function(){
+    setTimeout(function () {
         $("#player").hide(1000)
-      }, 1000)
+    }, 1000)
 
 }
 
-function nextScene(name){
-    var next = getScene(name)
+function nextScene(name) {
+    if (name.startsWith("ques")) {
+        
+        var nextQ = getQuestion(name)
+        makeQuestion(nextQ)
 
-    player.seekTo(next.begin, true)
-    $("#questionContainer").hide(1000)
-    $("#player").show(1000)
-    player.playVideo()
-    run(next)
+    } else {
+        var next = getScene(name)
+
+        player.seekTo(next.begin, true)
+        $("#questionContainer").hide(1000)
+        $("#player").show(1000)
+        player.playVideo()
+        run(next)
+    }
     // call run with scene
 }

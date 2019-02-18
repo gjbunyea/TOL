@@ -34,7 +34,7 @@ function onPlayerReady(event) {
 var letPlayerChange = true;
 
 function onPlayerStateChange(event) {
-    if(letPlayerChange){
+    if (letPlayerChange) {
         letPlayerChange = false
         var scene = getScene("scene1");
         run(scene)

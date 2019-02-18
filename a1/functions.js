@@ -50,17 +50,19 @@ function makeQuestion(question) {
 }
 
 function makeButtons(buttons) {
+    $("#buttonContainer").empty()
+
     buttons.forEach(b => {
-        $( "<button/>", {
+        $("<button/>", {
             id: b.id,
             text: b.description,
-          })
-          .attr("onClick", "nextScene(\""+ b.whereTo + "\")")
-          .appendTo( "#buttonContainer" );
+        })
+            .attr("onClick", "nextScene(\"" + b.whereTo + "\")")
+            .appendTo("#buttonContainer");
 
         $("<img>", {
             src: b.image
         })
-        .appendTo("#"+b.id)
+            .appendTo("#" + b.id)
     });
 }
