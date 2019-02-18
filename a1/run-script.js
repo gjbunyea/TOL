@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $("#button-container").hide();
+    // $("#feedbackContainer").hide();
 });
 
 function run(currentScene) {
@@ -24,6 +25,7 @@ function sceneOver(scene) {
 }
 
 function nextScene(name) {
+
     if (name.startsWith("ques")) {
         
         var nextQ = getQuestion(name)

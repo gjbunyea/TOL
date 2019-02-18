@@ -57,12 +57,60 @@ function makeButtons(buttons) {
             id: b.id,
             text: b.description,
         })
-            .attr("onClick", "nextScene(\"" + b.whereTo + "\")")
-            .appendTo("#buttonContainer");
+            .attr("onClick", "giveFeedback(\"" + b.answer+ "\",\""+b.feedback + "\",\"" + b.whereTo+ "\")")
+            .appendTo("#buttonContainer")
 
         $("<img>", {
             src: b.image
         })
             .appendTo("#" + b.id)
     });
+}
+
+function giveFeedback(cor, words, whereTo){
+    console.log("feedback time!")
+    console.log(""+cor +" "+ words+" "+whereTo)
+    $("#questionContainer").hide("slow")
+    
+    if(cor == 'true'){
+
+        $("<h1/>", {
+            text: "Correct!",
+        })
+        .css('background-color', '#99ff99')
+        .appendTo("#feedbackContainer")
+        
+    } else {
+
+        $("<h1/>", {
+            text: "That's not correct...",
+        })
+        .css('background-color', '#ff6699')
+        .appendTo("#feedbackContainer")
+    }
+
+
+    $("<p/>", {
+        text: words
+    }).appendTo("#feedbackContainer")
+
+    $("<button/>", {
+        text: "Continue",
+    })
+    .attr("onClick", "clearFeedback(\"" + whereTo + "\")")
+    .appendTo("#feedbackContainer")
+
+    console.log("okokok")
+
+    // $("#feedbackContainer").show("slow")
+}
+
+function clearFeedback(whereTo){
+
+    console.log("what the fuck")
+
+    // $("#feedbackContainer").hide()
+    $("#feedbackContainer").empty()
+
+    nextScene(whereTo)
 }
