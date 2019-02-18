@@ -10,7 +10,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        videoId: 'M7lc1UVf-VE',
+        videoId: 'YAyjVtHm418',
         playerVars: { 'autoplay': 0, 'wmode': 'transparent', 'controls': 1, 'rel': 0, 'modestbranding': 1, 'showinfo': 0 },
         events: {
             'onReady': onPlayerReady,
@@ -36,7 +36,7 @@ var letPlayerChange = true;
 function onPlayerStateChange(event) {
     if(letPlayerChange){
         letPlayerChange = false
-        var scene = getScene("opening");
+        var scene = getScene("scene1");
         run(scene)
     }
 }

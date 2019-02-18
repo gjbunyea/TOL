@@ -12,18 +12,24 @@ function sceneOver(scene) {
 
     pauseVideo()
 
-    $("#currQuestion").text("What do you think?")
+    var nextQ = getQuestion( scene.nextQ )
 
-    $("button").each(function (index) {
+    makeQuestion( nextQ )    
 
-        $( this ).html(scene.buttonopts[index])
-        $( this ).attr("onclick","nextScene(\"" + scene.nextsceneopts[index] + "\")")
-    
-    });
-
-    $("#button-container").show("slow")
+    // $("#questionContainer").show("slow")
     setTimeout(function(){
         $("#player").hide(1000)
       }, 1000)
 
+}
+
+function nextScene(name){
+    var next = getScene(name)
+
+    player.seekTo(next.begin, true)
+    $("#questionContainer").hide(1000)
+    $("#player").show(1000)
+    player.playVideo()
+    run(next)
+    // call run with scene
 }

@@ -11,7 +11,7 @@ $.fn.enable = function () {
     return this.each(function () {
         if (typeof this.disabled != "undefined") this.disabled = false;
     });
-} 
+}
 
 // Youtube API stuff
 
@@ -19,27 +19,48 @@ function stopVideo() {
     player.stopVideo();
 }
 
-function pauseVideo(){
+function pauseVideo() {
     player.pauseVideo();
 }
 
-function playVideo(){
+function playVideo() {
     player.playVideo();
 }
 
 // scenes object fun
 
-function getScene(getName){
+function getScene(getName) {
     return scenes.find(item => item.name === getName)
 }
 
-function nextScene(name){
-    var next = getScene(name)
+// questions object fun
 
-    player.seekTo(next.begin, true)
-    $("#button-container").hide(1000)
-    $("#player").show(1000)
-    player.playVideo()
-    run(next)
-    // call run with scene
+function getQuestion(getName) {
+    return questions.find(item => item.name === getName)
+}
+
+function makeQuestion(question) {
+
+    $("#currQuestion").text(question.text)
+
+    makeButtons(question.buttons)
+
+    $("#questionContainer").show("slow")
+
+}
+
+function makeButtons(buttons) {
+    buttons.forEach(b => {
+        $( "<button/>", {
+            id: b.id,
+            text: b.description,
+          })
+          .attr("onClick", "nextScene(\""+ b.whereTo + "\")")
+          .appendTo( "#buttonContainer" );
+
+        $("<img>", {
+            src: b.image
+        })
+        .appendTo("#"+b.id)
+    });
 }

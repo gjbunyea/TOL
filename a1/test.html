@@ -3,12 +3,12 @@
 
 <head>
   <!-- materialize CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
 </head>
 
 <body>
   <!-- materialize JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
 
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -33,16 +33,29 @@
       height: 390px;
       padding-top: 50px;
     }
+
+    button {
+      width: 210px;
+      height: 210px;
+      float:left;
+      /* padding: 15px; */
+      margin: 5px;
+    }
+    button img{
+      width: 200px;
+      height: 200px;
+      float:left;
+    }
   </style>
 
   <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
   <div class="centered">
     <div id="player"></div>
 
-    <div id="button-container">
+    <div id="questionContainer">
       <h1 id="currQuestion"></h1>
-      <button class="btn-large" id="b1" ></button>
-      <button class="btn-large" id="b2" ></button>
+      <div id="buttonContainer"></div>
+      
     </div>
   </div>
 
