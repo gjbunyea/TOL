@@ -5,7 +5,6 @@ let questions = [
         "buttons": [
             {
                 "id": "b1",
-                "image": ,
                 "description": ,
                 "answer": ,
                 "feedback": ,
@@ -35,5 +34,3 @@ let questions = [
         ]
     }
 ]
-
-let q2flag = false
