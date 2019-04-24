@@ -13,20 +13,6 @@ $.fn.enable = function () {
     });
 }
 
-// Youtube API stuff
-
-function stopVideo() {
-    player.stopVideo();
-}
-
-function pauseVideo() {
-    player.pauseVideo();
-}
-
-function playVideo() {
-    player.playVideo();
-}
-
 // scenes object fun
 
 function getScene(getName) {

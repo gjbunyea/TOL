@@ -1,5 +1,7 @@
 $(document).ready(function () {
     $("#button-container").hide();
+    var scene = getScene("ques1");
+    run(scene)
 });
 
 function run(currentScene) {
@@ -18,9 +20,6 @@ function sceneOver(scene) {
         makeQuestion(nextQ)
     }
     // $("#questionContainer").show("slow")
-    setTimeout(function () {
-        $("#player").hide(1000)
-    }, 1000)
 }
 
 function nextScene(name) {
@@ -40,11 +39,7 @@ function nextScene(name) {
 
             var next = getScene(name)
 
-            player.seekTo(next.begin, true)
-
             $("#questionContainer").hide(1000)
-            $("#player").show(1000)
-            player.playVideo()
             run(next)
 
         
