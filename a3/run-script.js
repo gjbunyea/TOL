@@ -54,5 +54,4 @@ function giveFeedback(cor, words, whereTo) {
 function clearFeedback(whereTo) {
 
     $("#feedbackContainer").empty()
-
 }
