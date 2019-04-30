@@ -8,7 +8,7 @@ pp = pprint.PrettyPrinter(indent=4)
 with open('data/questions.json') as q:
     _questions = json.load(q)
 
-with open('data/answers.json') as a:
+with open('data/answers_update.json') as a:
     _answers = json.load(a)
 
 # Desired Output
