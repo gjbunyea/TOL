@@ -217,5 +217,8 @@ try_amount = 10
 
 q = quizMaker(question_amount, try_amount)
 
-with open('test_object.json', 'w') as outfile: # NEED to add 'question = []' at the beginning of the file
-    json.dump(q, outfile)
+q = "var questions = " + str(q)
+
+with open('test_object.js', 'w') as file: # NEED to add 'question = []' at the beginning of the file https://stackoverflow.com/questions/38149602/is-it-possible-to-put-javascript-code-into-a-js-file-through-python
+    file.write(q.strip('\"'))
+    file.close
